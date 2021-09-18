@@ -15,12 +15,12 @@ public class KafkaReceiver {
 
     private static int MSG_COUNT = 4;
 
-    KafkaConsumer<String, String> consumer = null;
+    KafkaConsumer<String, String> consumer;
 
     public KafkaReceiver(int partition) {
         consumer = new KafkaConsumer<>(KafkaHelper.getConsumerProps(TOPIC_NAME));
-//        consumer.assign(Collections.singleton(new TopicPartition(TOPIC_NAME, partition)));
-        consumer.subscribe(Collections.singleton(TOPIC_NAME));
+        consumer.assign(Collections.singleton(new TopicPartition(TOPIC_NAME, partition)));
+//        consumer.subscribe(Collections.singleton(TOPIC_NAME));
     }
 
     public void readMessages() {

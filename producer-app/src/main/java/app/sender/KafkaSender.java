@@ -4,7 +4,6 @@ import lombok.SneakyThrows;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import app.common.KafkaHelper;
 import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.protocol.types.Field;
 
 public class KafkaSender {
 
